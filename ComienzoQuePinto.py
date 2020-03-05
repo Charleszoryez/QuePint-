@@ -23,8 +23,10 @@ class Event(Model):
     gpslength =
     gpslatitude =
     startDate =
-    endingDate = 
+    endingDate =
 
+    class Meta:
+        database = db
 
 def create_and_connect():
     db.connect()
