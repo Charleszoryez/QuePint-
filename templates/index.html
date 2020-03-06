@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html dir="ltr" lang="es">
 <head>
@@ -10,16 +11,16 @@
     <!-- google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
     <!-- Plugins CSS -->
-    <link href="css/plugin.css" rel="stylesheet" />
+    <link href="{% static 'css/plugin.css'%}" rel="stylesheet" />
     <!-- style CSS -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/dashboard.css" rel="stylesheet" />
+    <link href="{% static 'css/style.css'%}" rel="stylesheet" />
+    <link href="{% static 'css/dashboard.css'%}" rel="stylesheet" />
     <!-- fontawesome CSS -->
-    <link href="css/all.min.css" rel="stylesheet" />
+    <link href="{% static 'css/all.min.css'%}" rel="stylesheet" />
     <!--color switcher css-->
-    <link rel="stylesheet" href="css/switcher/skin-red.css" media="screen" id="style-colors" />
+    <link rel="stylesheet" href="{% static 'css/switcher/skin-red.css'%}" media="screen" id="style-colors" />
     <!-- Document Title -->
-    <title>Que Pintó? - A donde vamos hoy? </title>
+    <title>{% block titulo %} Que Pintó? - A donde vamos hoy? {% endblock titulo %}</title>
 </head>
 
 <body>
@@ -30,6 +31,8 @@
             <div class="dot"></div>
         </div>
     </div>
+
+
     <div class="page-wrapper">
         <header class="header transparent scroll-hide">
             <div class="site-navbar-wrap v2">
@@ -37,16 +40,17 @@
                     <div class="site-navbar">
                         <div class="row align-items-center">
                             <div class="col-md-4 col-6">
-                                <a class="navbar-brand" href="#"><img src="images/logo-red.png" alt="logo" class="img-fluid"></a>
+                                <a class="navbar-brand" href="{% url 'home:index' %}"><img src="{% static 'images/logo-red.png'%}" alt="logo" class="img-fluid"></a>
                             </div>
                             <div class="col-md-8 col-6">
                                 <nav class="site-navigation float-right">
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
                                             
-                                            <li><a href="index.html" > Home </a> </li>
-                                            <li><a href="favoritos.html" ><i class="icofont-heart"></i> Mis Favoritos </a> </li>
-                                            <li class="d-lg-none"><a class="btn v1" href="login.html"><i class="icofont-login"></i> Login </a></li>
+                                            <li><a href="{% url 'home:index' %}"> Home </a> </li>
+                                            <li><a href="{% url 'home:favoritos' %}" ><i class="icofont-heart"></i> Mis Favoritos </a> </li>
+                                            <li><a href="{% url 'home:crearevento' %}" ><i class="icofont-pencil"></i> Crear Evento </a> </li>
+                                            <li class="d-lg-none"><a class="btn v1" href="{% url 'home:login' %}"><i class="icofont-login"></i> Login </a></li>
                                         </ul>
                                     </div>
                                 </nav>
@@ -56,7 +60,7 @@
                                     </a>
                                 </div>
                                 <div class="add-list float-right">
-                                    <a class="btn v8" href="login.html"><i class="icofont-login"></i> Login</a>
+                                    <a class="btn v8" href="{% url 'home:login' %}"><i class="icofont-login"></i> Login</a>
                                 </div>
                             </div>
                         </div>
@@ -72,8 +76,9 @@
                 </div>
             </div>
         </header>
+        {% block contenido %}
 
-        <div class="hero v2 section-padding" style="background-image: url(images/header/hero-2.jpg)">
+        <div class="hero v2 section-padding" style="background-image: url({% static 'images/header/hero-2.jpg'%})">
             <div class="overlay op-5"></div>
             <div class="container">
                 <div class="row">
@@ -121,7 +126,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/teatro.jpg" alt="Teatro" class="img_fluid">
+                                    <img src="{% static 'images/categorias/teatro.jpg'%}" alt="Teatro" class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -136,7 +141,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/restaurant.jpg" alt="Restaurant" class="img_fluid">
+                                    <img src="{% static 'images/categorias/restaurant.jpg'%}" alt="Restaurant" class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -151,7 +156,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/festival.jpg" alt="Festival" class="img_fluid">
+                                    <img src="{% static 'images/categorias/festival.jpg'%}" alt="Festival" class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -166,7 +171,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/fiesta.jpg" alt="Fiesta" class="img_fluid">
+                                    <img src="{% static 'images/categorias/fiesta.jpg'%}" alt="Fiesta" class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -181,7 +186,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/concierto.jpg" alt="Concierto" class="img_fluid">
+                                    <img src="{% static 'images/categorias/concierto.jpg'%}" alt="Concierto" class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -196,7 +201,7 @@
                         <a href="resultado.html">
                             <div class="popular-catagory-content v2">
                                 <div class="popular-catagory-img">
-                                    <img src="images/categorias/cine.jpg" alt="..." class="img_fluid">
+                                    <img src="{% static 'images/categorias/cine.jpg'%}" alt="..." class="img_fluid">
                                     <div class="overlay op-5"></div>
                                 </div>
                                 <div class="cat-content">
@@ -212,7 +217,7 @@
         </div>  
         
                
-        <div class="work-process pad-bot-90 section-padding" style="background-image: url(images/others/dots-bg.svg)">
+        <div class="work-process pad-bot-90 section-padding" style="background-image: url({% static 'images/others/dots-bg.svg'%})">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 offset-md-2 text-center">
@@ -221,7 +226,7 @@
                     <div class="col-md-4">
                         <div class="work-process-content v1 text-center">
                             <div class="process-icon v1">
-                                <img src="images/others/1.png" alt="...">
+                                <img src="{% static 'images/others/1.png'%}" alt="...">
                                 <span>1</span>
                             </div>
                             <h4 class="title">Busca</h4>
@@ -233,7 +238,7 @@
                     <div class="col-md-4">
                         <div class="work-process-content v1 text-center">
                             <div class="process-icon v1">
-                                <img src="images/others/2.png" alt="...">
+                                <img src="{% static 'images/others/2.png'%}" alt="...">
 
                                 <span>2</span>
 
@@ -247,7 +252,7 @@
                     <div class="col-md-4">
                         <div class="work-process-content v1 text-center">
                             <div class="process-icon v1">
-                                <img src="images/others/3.png" alt="...">
+                                <img src="{% static 'images/others/3.png'%}" alt="...">
 
                                 <span>3</span>
                             </div>
@@ -260,9 +265,10 @@
                 </div>
             </div>
         </div>
-     
+        {% endblock contenido %}
         <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
     </div>
+
 
     <div class="footer-wrapper no-pad-tb v2">
         <div class="footer-top-area">
@@ -270,7 +276,7 @@
                 <div class="row nav-folderized">
                     <div class="col-lg-12 col-md-12">
                         <div class="footer-logo text-center">
-                            <a href="#"> <img src="images/logo-red.png" alt="Logo - Que Pinto?"></a>
+                            <a href="#"> <img src="{% static 'images/logo-red.png'%}" alt="Logo - Que Pinto?"></a>
                         </div>
                     </div>
                 </div>
@@ -288,11 +294,11 @@
     </div>
    
     <!--plugin js-->
-    <script src="js/plugin.js"></script>
+    <script src="{% static 'js/plugin.js'%}"></script>
     <!--google maps-->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
     <!--Main js-->
-    <script src="js/main.js"></script>
+    <script src="{% static 'js/main.js'%}"></script>
     <!--Scripts ends-->
 </body>
 

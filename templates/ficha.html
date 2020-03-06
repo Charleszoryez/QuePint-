@@ -1,77 +1,11 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="es">
-    <head>
-        <!-- Metas -->
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="GameOfCode" />
-        <!-- Links -->
-        <link rel="icon" type="image/png" href="#" />
-        <!-- google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800" rel="stylesheet">
-        <!-- Plugins CSS -->
-        <link href="css/plugin.css" rel="stylesheet" />
-        <!-- style CSS -->
-        <link href="css/style.css" rel="stylesheet" />
-        <link href="css/dashboard.css" rel="stylesheet" />
-        <!-- fontawesome CSS -->
-        <link href="css/all.min.css" rel="stylesheet" />
-        <!--color switcher css-->
-        <link rel="stylesheet" href="css/switcher/skin-red.css" media="screen" id="style-colors" />
-        <!-- Document Title -->
-        <title>Que Pintó? - A donde vamos hoy?</title>
-    </head>
+{% extends 'index.html' %}
+{% load staticfiles %}
 
-    <body>
-        <div class="preloader js-preloader">
-            <div class="dots">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-        </div>
-        <div class="page-wrapper">
-            <header class="transparent scroll-hide">
-                <div class="site-navbar-wrap v2">
-                    <div class="container">
-                        <div class="site-navbar">
-                            <div class="row align-items-center">
-                                <div class="col-md-4 col-6">
-                                    <a class="navbar-brand" href="#"><img src="images/logo-red.png" alt="logo" class="img-fluid"></a>
-                                </div>
-                                <div class="col-md-8 col-6">
-                                    <nav class="site-navigation float-right">
-                                        <div class="container">
-                                            <ul class="site-menu js-clone-nav d-none d-lg-block">
+{% block titulo %}
+Ficha - Que Pintó? 
+{% endblock titulo %}
 
-                                                <li><a href="index.html" > Home </a> </li>
-                                                <li><a href="favoritos.html" ><i class="icofont-heart"></i> Mis Favoritos </a> </li>
-                                                <li class="d-lg-none"><a class="btn v1" href="login.html"><i class="icofont-login"></i> Login </a></li>
-                                            </ul>
-                                        </div>
-                                    </nav>
-                                    <div class="d-lg-none sm-right">
-                                        <a href="#" class="mobile-bar js-menu-toggle">
-                                            <span class="ion-android-menu"></span>
-                                        </a>
-                                    </div>
-                                    <div class="add-list float-right">
-                                        <a class="btn v8" href="login.html"><i class="icofont-login"></i> Login</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="site-mobile-menu">
-                            <div class="site-mobile-menu-header">
-                                <div class="site-mobile-menu-close  js-menu-toggle">
-                                    <span class="ion-ios-close-empty"></span>
-                                </div>
-                            </div>
-                            <div class="site-mobile-menu-body"></div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+{% block contenido %}
 
             <div class="container">
                 <div class="row">
@@ -307,42 +241,4 @@
                 </div>
             </div>
 
-
-
-            <span class="scrolltotop"><i class="ion-arrow-up-c"></i></span>
-        </div>
-
-        <div class="footer-wrapper no-pad-tb v2">
-            <div class="footer-top-area">
-                <div class="container">
-                    <div class="row nav-folderized">
-                        <div class="col-lg-12 col-md-12">
-                            <div class="footer-logo text-center">
-                                <a href="#"> <img src="images/logo-red.png" alt="Logo - Que Pinto?"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-12">
-                            <p class="copy text-center">  © 2020 | Desarrollado por <strong>Game of Code</strong></p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!--plugin js-->
-        <script src="js/plugin.js"></script>
-        <!--google maps-->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_8C7p0Ws2gUu7wo0b6pK9Qu7LuzX2iWY&amp;libraries=places&amp;callback=initAutocomplete"></script>
-        <!--Main js-->
-        <script src="js/main.js"></script>
-        <!--Scripts ends-->
-    </body>
-
-</html>
+{% endblock contenido %}
