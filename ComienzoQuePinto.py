@@ -31,3 +31,5 @@ class Event(Model):
 def create_and_connect():
     db.connect()
     db.create_tables([Person],safe=True)
+
+hola esto es una prueba
