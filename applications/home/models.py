@@ -5,7 +5,7 @@ class Persona(models.Model):
     name = models.CharField(max_length = 100, null = False, blank = False, )
     ci = models.IntegerField(primary_key = True,null = False, blank = False)
     email = models.EmailField(null = False,blank = False)
-    password = models.TextField(null = False,blank = False)
+    password = models.CharField(max_length = 20,null = False,blank = False)
 
     class Meta:
         verbose_name = "Persona"
@@ -14,7 +14,7 @@ class Persona(models.Model):
         return self.name
 
 class Evento(models.Model):
-    nameEvent = models.TextField(max_length = 200,null = False, blank = False)
+    nameEvent = models.CharField(max_length = 100,null = False, blank = False)
     organizer = models.CharField(max_length = 100,null = False,blank = False)
     category = models.CharField(max_length = 50,null = False, blank = False)
     description = models.TextField(null = False,blank = False)
