@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html dir="ltr" lang="es">
 <head>
@@ -46,7 +46,7 @@
                                 <nav class="site-navigation float-right">
                                     <div class="container">
                                         <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                            
+
                                             <li><a href="{% url 'home:index' %}"> Home </a> </li>
                                             <li><a href="{% url 'home:favoritos' %}" ><i class="icofont-heart"></i> Mis Favoritos </a> </li>
                                             <li><a href="{% url 'home:crearevento' %}" ><i class="icofont-pencil"></i> Crear Evento </a> </li>
@@ -96,7 +96,7 @@
                                 <div class="col-lg-4 col-md-12">
                                     <input class="hero__form-input custom-select" type="text" name="" id="" placeholder="Que estas buscando?">
                                 </div>
-                                
+
                                 <div class="col-lg-4 col-md-12">
                                     <select class="hero__form-input  custom-select">
                                         <option>Teatro</option>
@@ -115,7 +115,7 @@
                             </div>
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -214,9 +214,9 @@
                     </div>
                 </div>
             </div>
-        </div>  
-        
-               
+        </div>
+
+
         <div class="work-process pad-bot-90 section-padding" style="background-image: url({% static 'images/others/dots-bg.svg'%})">
             <div class="container">
                 <div class="row">
@@ -292,7 +292,7 @@
             </div>
         </div>
     </div>
-   
+
     <!--plugin js-->
     <script src="{% static 'js/plugin.js'%}"></script>
     <!--google maps-->
