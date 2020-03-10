@@ -5,10 +5,11 @@ from .views import *
 #app_name="home_app"
 
 urlpatterns = [
-    path('',home, name = 'index'),
-    path('login/',login, name = 'login'),
-    path('favoritos/',favoritos, name = 'favoritos'),
-    path('ficha/',ficha, name = 'ficha'),
-    path('crearevento/',crearevento, name = 'crearevento'),
-    path('resultado/',resultado, name = 'resultado'),
+    path('',Inicio.as_view() , name = 'index'),
+    path('login/',Login.as_view(), name = 'login'),
+    path('favoritos/',Favoritos.as_view(), name = 'favoritos'),
+    path('ficha/',Ficha.as_view(), name = 'ficha'),
+    path('crearevento/',CrearEvento.as_view(), name = 'crearevento'),
+    path('resultado/',Resultado.as_view(), name = 'resultado'),
 ]
+
