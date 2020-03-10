@@ -14,6 +14,7 @@ class Persona(models.Model):
         return self.name
 
 class Evento(models.Model):
+    id = models.AutoField(primary_key = True)
     nameEvent = models.CharField(max_length = 100,null = False, blank = False)
     organizer = models.CharField(max_length = 100,null = False,blank = False)
     category = models.CharField(max_length = 50,null = False, blank = False)
@@ -26,6 +27,7 @@ class Evento(models.Model):
     #gpslatitude =
     startDate = models.DateField(null = False,blank = False)
     endingDate = models.DateField(null = False,blank = False)
+    persona_ci = models.ForeignKey(Persona, on_delete = models.CASCADE)
 
     class Meta:
         verbose_name = "Evento"
