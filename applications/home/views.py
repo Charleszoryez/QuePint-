@@ -1,30 +1,21 @@
 from django.shortcuts import render
-
+from django.views.generic import TemplateView
 # Create your views here.
 
-"""
-from django.views.generic import (
-    TemplateView,
-)
+class Inicio(TemplateView):
+    template_name = 'index.html'
+    
+class Login(TemplateView):
+    template_name = 'login.html'
 
-class IndexView(TemplateView):
-    template_name = "index.html"
+class Favoritos(TemplateView):
+    template_name = 'favoritos.html'
 
-"""
-def home(request):
-    return render(request,'index.html')
+class Ficha(TemplateView):
+    template_name = 'ficha.html'
 
-def login(request):
-    return render(request,'login.html')
+class CrearEvento(TemplateView):
+    template_name = 'crear-evento.html'
 
-def favoritos(request):
-    return render(request,'favoritos.html')
-
-def ficha(request):
-    return render(request,'ficha.html')
-
-def crearevento(request):
-    return render(request,'crear-evento.html')
-
-def resultado(request):
-    return render(request,'resultado.html')
+class Resultado(TemplateView):
+    template_name = 'resultado.html'
