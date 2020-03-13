@@ -48,17 +48,18 @@ Login - Que Pintó?
                                     </div>
                                     <div class="tab-pane fade" id="register" role="tabpanel">
                                         <form id="register-form" action="#" method="post">
+                                            {% csrf_token %}
                                             <div class="form-group">
-                                                <input type="text" name="" id="" tabindex="1" class="form-control" placeholder="Nombre Completo" value="">
+                                                {{ form.name }}
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="" id="" tabindex="2" class="form-control" placeholder="Cédula de Identidad" value="">
+                                                {{ form.ci }}
                                             </div>
                                             <div class="form-group">
-                                                <input type="email" name="" id="" tabindex="3" class="form-control" placeholder="Email" value="">
+                                                {{ form.email }}
                                             </div>
                                             <div class="form-group">
-                                                <input type="password" name="" id="" tabindex="4" class="form-control" placeholder="Contraseña">
+                                                {{ form.password}}
                                             </div>
 
                                             <div class="res-box text-center mar-top-30">

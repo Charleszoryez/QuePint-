@@ -1,4 +1,4 @@
-from django.urls import path, re_path
+from django.urls import path, re_path, include
 from .views import *
 
 #from . import views
@@ -6,10 +6,9 @@ from .views import *
 
 urlpatterns = [
     path('',Inicio.as_view() , name = 'index'),
-    path('login/',Login.as_view(), name = 'login'),
+    path('login/',crearUsuario, name = 'login'),
     path('favoritos/',Favoritos.as_view(), name = 'favoritos'),
     path('ficha/',Ficha.as_view(), name = 'ficha'),
     path('crearevento/',CrearEvento.as_view(), name = 'crearevento'),
     path('resultado/',Resultado.as_view(), name = 'resultado'),
 ]
-
